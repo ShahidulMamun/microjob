@@ -99,7 +99,7 @@ Route::middleware(['auth', 'user'])
 
        //profile route
         Route::get('/profile', [UserProfileController::class, 'userProfile'])
-            ->name('profile');
+            ->name('profile')->middleware('user.upgrade');
         Route::post('/profile-update', [UserProfileController::class, 'userProfileUpdate'])
             ->name('profile.update');
         Route::post('/password-update', [UserProfileController::class, 'userPasswordUpdate'])
