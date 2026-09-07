@@ -27,8 +27,8 @@ class UserJobController extends Controller
     // ── GET /user/create-job ──────────────────────────────────────────
     public function create()
     {
-        $setting = WebsiteSetting::first();
-        return view('user.jobs.create',compact('setting'));
+    
+        return view('user.jobs.create');
     }
 
     // ── GET /user/continents ──────────────────────────────────────────
@@ -443,9 +443,8 @@ class UserJobController extends Controller
     // my jobs
     public function myjobs(){
         $pageTitle= "My Jobs";
-        $setting = WebsiteSetting::first();
         $jobs =  JobPost::where('user_id',Auth::user()->id)->orderBy('created_at','desc')->get();
-        return view('user.jobs.my_job',compact('jobs','pageTitle','setting'));
+        return view('user.jobs.my_job',compact('jobs','pageTitle'));
     }
 
     // find jobs
