@@ -19,8 +19,9 @@ class CheckUpgrade
         
          if (Auth::check() && !Auth::user()->is_upgrade) {
 
-            Auth::logout();
-            return redirect()->route('login');
+            $message = "Please Upgrade your account for more action";
+
+            return redirect()->route('route')->with('message',$message);
          }
         return $next($request);
     }
