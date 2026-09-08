@@ -14,10 +14,10 @@ class UserWithdrawController extends Controller
 {
     public function index(){
 
-    	$setting = WebsiteSetting::first();
+    	
 
     	$methods = PaymentMethod::where('status','active')->get();
-    	return view('user.withdraw.create',compact('methods','setting'));
+    	return view('user.withdraw.create',compact('methods');
     }
 
     // public function create(Request $request){

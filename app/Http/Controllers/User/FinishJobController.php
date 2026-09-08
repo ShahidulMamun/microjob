@@ -13,8 +13,8 @@ class FinishJobController extends Controller
 
 
 
-    	$submitjobs = JobSubmit::where('user_id',Auth::user()->id)->with(['job','jobowner'])->orderBy('id','desc')->get();
-    	$totalSubmit = $submitjobs->count();
+      	$submitjobs = JobSubmit::where('user_id',Auth::user()->id)->with(['job','jobowner'])->orderBy('id','desc')->get();
+     	$totalSubmit = $submitjobs->count();
 		$pendingCount  = $submitjobs->where('status', 'pending')->count();
 		$rejectedCount = $submitjobs->where('status', 'rejected')->count();
 		$approvedCount = $submitjobs->where('status', 'approved')->count();

@@ -6,7 +6,7 @@
   @endphp
   <a class="navbar-brand d-flex align-items-center" href="{{asset('/')}}">
     <span class="logo-icon" style="background: none">
-        <img src="{{asset('storage/'.$setting->site_logo)}}" class="logo" alt="logo">
+        <img src="{{asset('storage/'.$setting->site_logo) ?? ''}}" class="logo" alt="logo">
     </span>
     <span>
      {{$setting->site_title}}

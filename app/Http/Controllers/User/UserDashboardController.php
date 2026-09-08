@@ -76,14 +76,12 @@ class UserDashboardController extends Controller
         // ── Priority order merge ──
         $jobs = $boostedJobs->concat($topJobs)->concat($normalJobs);
  
-        $setting = WebsiteSetting::first();
  
         return view('user.dashboard', compact(
             'jobs',
             'boostedJobs',
             'topJobs',
             'normalJobs',
-            'setting',
             'banner'
         ));
        
