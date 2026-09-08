@@ -11,9 +11,14 @@
      <link rel="stylesheet" type="text/css" href="{{ asset('assets/font-awesome/css/font-awesome.css')}}">
      <link rel="stylesheet" type="text/css" href="{{ asset('assets/font-awesome/css/font-awesome.min.css')}}">
      <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
+
      <!-- for widthdrow -->
      <!-- Then plugins -->
       <script src="{{ asset('assets/js/toastr.min.js') }}"></script>
+      <!-- ajx form submite  -->
+     <script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}"></script> 
+     <!-- sweetalert2 -->
+     <script src="{{ asset('assets/js/sweetalert2@11.js') }}"></script> 
      <!-- End widthdrow -->
      <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <!-- Custom Styles -->
@@ -37,7 +42,7 @@
  @stack('scripts')
 
       <!--  sweet alert -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
 <!-- script sweet alert success show -->
 @if(session('success'))
 <script>
@@ -79,6 +84,8 @@ Swal.fire({
 });
 </script>
 @endif
+
+  @stack('scripts')
 </body>
 </html>
 

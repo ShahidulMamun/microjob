@@ -30,6 +30,7 @@ use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\User\TopFreelancerController;
 use App\Http\Controllers\User\TopBuyerController;
+use App\Http\Controllers\User\AccountUpgradeController;
 use Illuminate\Support\Facades\Route;
 
 // web pages
@@ -80,7 +81,14 @@ Route::middleware('guest.redirect')->group(function () {
 
 });
 
+/*----------------------------------------------------
+| account verify
+------------------------------------------------------*/ 
 
+Route::get('account/verify', [AccountUpgradeController::class, 'upgrade'])
+        ->name('account.verify');
+Route::post('account/verify/paid', [AccountUpgradeController::class, 'acpaid'])
+        ->name('account.verify.paid');
 
 
 // Protected routes
@@ -99,7 +107,7 @@ Route::middleware(['auth', 'user'])
 
        //profile route
         Route::get('/profile', [UserProfileController::class, 'userProfile'])
-            ->name('profile')->middleware('user.upgrade');
+            ->name('profile');
         Route::post('/profile-update', [UserProfileController::class, 'userProfileUpdate'])
             ->name('profile.update');
         Route::post('/password-update', [UserProfileController::class, 'userPasswordUpdate'])

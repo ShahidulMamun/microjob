@@ -19,8 +19,8 @@ class CheckUpgrade
         
          if (Auth::check() && !Auth::user()->is_upgrade) {
 
-            Auth::logout();
-            return redirect()->route('login');
+           
+            return redirect()->route('account.verify');
          }
         return $next($request);
     }

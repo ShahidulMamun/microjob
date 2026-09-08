@@ -1,6 +1,5 @@
 @extends('user.layouts.app')
 @section('content')
-
 <style>
   :root {
     --primary:     #006A4E;
