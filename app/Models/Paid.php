@@ -14,8 +14,17 @@ class Paid extends Model
         'ac_type',
         'tran_id',
         'amount',
+        'expired_at',
+        'status',
 
     ];
+
+     protected $casts = [
+        'status' => 'string',
+        'expired_at' => 'datetime',
+    ];
+
+
 
   
 
