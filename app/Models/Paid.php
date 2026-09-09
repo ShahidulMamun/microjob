@@ -17,8 +17,22 @@ class Paid extends Model
         'expired_at',
         'status',
 
-
     ];
+
+     protected $casts = [
+        'status' => 'string',
+        'expired_at' => 'datetime',
+    ];
+     
+     protected static function boot()
+    {
+    parent::boot();
+
+    static::creating(function ($model) {
+        $model->expired_at = now()->addMonths(3);
+    });
+   }
+
 
   
 

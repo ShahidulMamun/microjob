@@ -45,6 +45,7 @@ return new class extends Migration
         $table->text('verified_reason')->nullable();
         $table->boolean('is_verified')->default(0);
         $table->boolean('is_upgrade')->default(0);
+         $table->boolean('upgrade_exp')->default(0);
         $table->text('ip_address')->nullable();
         $table->boolean('is_ban')->default(0);
         $table->text('ban_reason')->nullable();
