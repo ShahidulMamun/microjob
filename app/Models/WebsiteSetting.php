@@ -33,6 +33,7 @@ class WebsiteSetting extends Model
         'boost_charge_per_hour',
         'job_submit_rules',
         'max_reject_percentage',
+        'upgrade_fee',
     ];
 
     protected $casts = [

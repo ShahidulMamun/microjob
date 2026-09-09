@@ -393,6 +393,7 @@
         <li><a class="dropdown-item" href=""><i class="fa fa-file-image-o"></i> My Banner</a></li>
         <li><a class="dropdown-item" href="{{route('user.top-freelancer')}}"><i class="fa fa-users"></i> Top Freelancer</a></li>
         <li><a class="dropdown-item" href=""><i class="fa fa-lock"></i> Privacy &amp; Security</a></li>
+        <li><a class="dropdown-item" href="{{ route('account.verify') }}"><i class="fa fa-cogs"></i> Account Verify</a></li>
         <li><a class="dropdown-item" href="{{ route('user.profile') }}"><i class="fa fa-cogs"></i> Setting</a></li>
         <li><a class="dropdown-item" href=""><i class="fa fa-trash-o"></i> Delete Account</a></li>
         <li><hr class="dropdown-divider my-0"/></li>

@@ -38,6 +38,7 @@ return new class extends Migration
             $table->boolean('maintenance_mode')->default(false);
             $table->string('meta_title')->nullable();
             $table->text('meta_description')->nullable();
+            $table->decimal('upgrade_fee')->default(0);
             $table->string('meta_keywords')->nullable();
             $table->timestamps();
         });
