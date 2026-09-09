@@ -394,12 +394,8 @@
         <li><a class="dropdown-item" href="{{route('user.top-freelancer')}}"><i class="fa fa-users"></i> Top Freelancer</a></li>
         <li><a class="dropdown-item" href=""><i class="fa fa-lock"></i> Privacy &amp; Security</a></li>
 
-          @if(auth::user()->upgrade_status="upgrade_status")
+          @if(auth::user()->upgrade_status=="unverified" || auth::user()->upgrade_status=="expired")
          <li><a class="dropdown-item" href="{{ route('account.verify') }}"><i class="fa fa-cogs"></i> Account Verify</a></li>
-          @elseif(auth::user()->upgrade_status="active")
-          <span>Verified for {{auth::user()->upgrade_exppired_at->format('d m Y')}}</span>
-          @else
-            <span>Upgrade Expied</span>
           @endif
 
 
