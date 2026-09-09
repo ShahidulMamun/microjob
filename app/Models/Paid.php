@@ -14,6 +14,9 @@ class Paid extends Model
         'ac_type',
         'tran_id',
         'amount',
+        'expired_at',
+        'status',
+
 
     ];
 

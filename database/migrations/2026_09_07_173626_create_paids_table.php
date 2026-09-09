@@ -19,6 +19,7 @@ return new class extends Migration
              $table->string('amount');
              $table->string('tran_id');
              $table->dateTime('expired_at')->nullable();
+             $table->string('status')->default('panding');
              $table->timestamps();
         });
     }
