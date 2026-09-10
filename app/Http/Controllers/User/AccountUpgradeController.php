@@ -5,11 +5,13 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Paid;
+use App\Models\WebsiteSetting;
 
 class AccountUpgradeController extends Controller
 {
     public function upgrade(){
-        return view('account.verify');
+        $PaidCharg = WebsiteSetting::first();
+        return view('account.verify', compact('PaidCharg'));
     }
 
 // post data

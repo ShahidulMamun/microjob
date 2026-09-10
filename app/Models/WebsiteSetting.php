@@ -34,6 +34,7 @@ class WebsiteSetting extends Model
         'job_submit_rules',
         'max_reject_percentage',
         'upgrade_fee',
+        'paid_charg',
     ];
 
     protected $casts = [

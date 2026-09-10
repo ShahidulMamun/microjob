@@ -21,7 +21,7 @@
         </div>
         <div class="mb-2">
         <label for="text" class="form-label text-dark">Amount</label>
-        <input type="text" class="form-control" name="amount" placeholder="amount" required>
+        <input type="text" class="form-control" name="amount" value="{{ $PaidCharg->paid_charg }}" placeholder="amount" readonly>
       </div>
       <div class="mb-2">
         <label for="text" class="form-label text-dark">Transaction ID</label>

@@ -325,6 +325,14 @@
     <span class="ni-label">Setting</span>
   </a>
 
+    <a href="{{ route('admin.upgrade.request') }}"
+     class="ni">
+    <div class="ni-icon">
+      <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="2.5"/><path d="M8 2v1.5M8 12.5V14M2 8h1.5M12.5 8H14M3.6 3.6l1 1M11.4 11.4l1 1M3.6 12.4l1-1M11.4 4.6l1-1"/></svg>
+    </div>
+    <span class="ni-label">Verifiyed</span>
+  </a>
+
   {{-- Logout --}}
   <div class="sb-bottom">
     <form action="{{ route('logout') }}" method="POST">

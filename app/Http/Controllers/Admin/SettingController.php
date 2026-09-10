@@ -95,6 +95,8 @@ class SettingController extends Controller
                 'boost_charge_per_hour' =>$request->boost_charge_per_hour,
                 'max_reject_percentage' =>$request->max_reject_percentage,
                 'job_submit_rules' =>$request->job_submit_rules,
+                'paid_charg' =>$request->paid_charg,
+                
 
             ]);
 

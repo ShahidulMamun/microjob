@@ -31,7 +31,8 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\User\TopFreelancerController;
 use App\Http\Controllers\User\TopBuyerController;
 use App\Http\Controllers\User\AccountUpgradeController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\User\VerifiyedController;
+use Illuminate\Support\Facades\Route;  
 
 // web pages
 Route::get('/', function () {
@@ -210,14 +211,11 @@ Route::middleware(['auth', 'user'])
 //user routes group end
 
 //admin route group
-Route::middleware(['auth', 'admin'])
-    ->prefix('admin')
-    ->name('admin.')
-    ->group(function () {
+Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
 
         Route::get('/dashboard', [AdminDashboardController::class, 'adminDashboard'])
             ->name('dashboard');
-
+    Route::get('/user/verify/request', [VerifiyedController::class, 'index'])->name('upgrade.request');
         //continents route
         Route::get('/continent-add', [ContinentController::class, 'index'])->name('continent');
         Route::post('/continent-store', [ContinentController::class, 'store'])->name('continent.store');

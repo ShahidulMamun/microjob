@@ -285,6 +285,12 @@ tr:last-child td{border-bottom:none}
                             value="{{ old('max_reject_percentage', $setting->max_reject_percentage) }}">
                      </div>
 
+                       <div class="col-md-4">
+                        <label class="form-label">Paid Charge</label>
+                        <input type="number" step="" name="paid_charg" class="form-control"
+                            value="{{ old('paid_charg', $setting->paid_charg) }}">
+                     </div>
+
                       <div class="col-md-12">
                         <label class="form-label">Job Submit Rules</label>
                         <textarea name="job_submit_rules" class="form-control" rows="2">{{ old('job_submit_rules', $setting->job_submit_rules) }}</textarea>
