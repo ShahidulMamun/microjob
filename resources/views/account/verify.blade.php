@@ -3,6 +3,7 @@
 <div class="container">
 <div class="row d-flex justify-content-center align-items-center mt-2">
 	<div class="col-12 col-lg-4 mt-2">
+  @if(Auth::user()->upgrade_status !== 'active')
   <div class="card shadow p-4">
     <h3 class="text-center mb-4">Account Verification</h3>
     <form id="paidAccountForm" action="{{ route('account.verify.paid') }}" method="POST">
@@ -30,6 +31,9 @@
       <button type="submit" id="paidSubmitBtn" class="btn btn-primary w-100">Submit</button>
     </form>
   </div>
+  @else
+      <h3>Already Upgrade account</h3>
+  @endif
 </div>
 </div>
 </div>
@@ -130,12 +134,17 @@ $(document).ready(function () {
                         confirmButtonText: 'OK',
                         confirmButtonColor: '#FF4433',
                         allowOutsideClick: false
+
+
+
                     }).then(function () {
 
                         // Reset form after clicking OK
                         form[0].reset();
 
                     });
+
+                window.location.href = '/user/dashboard';
 
                 } else {
 
