@@ -12,10 +12,11 @@
      <link rel="stylesheet" type="text/css" href="{{ asset('assets/font-awesome/css/font-awesome.css')}}">
      <link rel="stylesheet" type="text/css" href="{{ asset('assets/font-awesome/css/font-awesome.min.css')}}">
      <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
-     <!-- <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}"> -->
+     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <!-- css -->
     <!-- Custom Styles -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/main.css')}}">
+    <!-- <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/main.css')}}"> -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css')}}">
 </head>
 
 <body>
