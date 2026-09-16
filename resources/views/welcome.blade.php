@@ -1,4 +1,4 @@
-@extends('frontend.layouts.app')
+@extends('frontend.layouts.frontend')
 @section('content')
 <div class="hero">
   <!--<div class="decor-hatch d-none d-lg-block"></div>-->
@@ -134,6 +134,23 @@
           </div>
         </div>
       </div>
+
+        <div class="slide-item">
+        <div class="product-card shadow">
+          <div class="product-thumb" style="background:linear-gradient(135deg,#cbbfa4,#b9ac8c);">
+            <img src="{{ asset('images/twitter.png') }}" alt="Twitter">
+          </div>
+          <div class="price-row">
+            <span class="price text-primary">Twitter (X) Ads & Engagement</span>
+          </div>
+          <div class="product-title">likes, comments, reposts, views, followers, profile visits, messages</div>
+          <div class="seller-row">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="">
+            <span class="seller-name">Get Paid Fast</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
@@ -716,7 +733,7 @@
     <div class="row g-0 align-items-stretch">
       <div class="col-lg-6">
         <div class="content-pane">
-        <h3 class="headline mb-0">Jobs Poster <span class="accent">Guidelines</span></h3>
+        <h3 class="headline mb-0">Jobs <span class="accent">Poster</span></h3>
         <p class="lede">
           Simple rules and guidelines for Job Posters.
         </p>
@@ -738,7 +755,7 @@
       <!--Workers-->
       <div class="col-lg-6">
            <div class="content-pane">
-        <h3 class="headline mb-0">Jobs Worker <span class="accent">Guidelines</span></h3>
+        <h3 class="headline mb-0">Jobs <span class="accent">Worker</span></h3>
         <p class="lede">
           Simple rules and guidelines for Job Workers
         </p>

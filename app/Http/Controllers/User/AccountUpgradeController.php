@@ -39,7 +39,8 @@ public function acpaid(Request $request){
 
     $validated = $request->validate([
         'ac_number' => 'required',
-        'ac_type'   => 'required',
+        'ac_type' => 'required|in:Bkas,Nagad,Rocket',
+
         'amount'    => [
             'required',
             'numeric',
@@ -51,7 +52,13 @@ public function acpaid(Request $request){
 
     [
     'tran_id.unique'=>'Transaction id already used',
+    ],
+
+    [
+     'ac_type.in'=> 'Invalid account type selected. Please select Bkas, Nagad, or Rocket.',
     ]
+
+
    
     );
      

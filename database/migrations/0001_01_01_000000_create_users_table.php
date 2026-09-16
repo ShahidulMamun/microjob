@@ -46,7 +46,7 @@ return new class extends Migration
         $table->boolean('is_verified')->default(0);
         $table->enum('upgrade_status',['active','expired','unverified'])->default('unverified');
         $table->dateTime('upgrade_at')->nullable();
-        $table->dateTime('upgrade_exppired_at')->nullable();
+        $table->dateTime('upgrade_expired_at')->nullable();
         $table->text('ip_address')->nullable();
         $table->boolean('is_ban')->default(0);
         $table->text('ban_reason')->nullable();

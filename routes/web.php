@@ -152,7 +152,7 @@ Route::middleware(['auth', 'user'])
 
 
         //submit job route
-        Route::post('/submit-job/{code}/{slug}',  [UserSubmitJobController::class, 'storeSubmitjob'])->name('submit-job'); 
+        Route::post('/submit-job/{code}/{slug}',  [UserSubmitJobController::class, 'storeSubmitjob'])->name('submit-job')->middleware('user.upgrade'); 
 
 
          //submit job proof route

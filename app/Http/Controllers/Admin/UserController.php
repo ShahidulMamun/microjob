@@ -111,7 +111,7 @@ class UserController extends Controller
   
   public function upgradeRequestList()
   {
-         $list = Paid::where('status','pending')->get();
+        $list = Paid::where('status','pending')->get();
         return view('admin.user.verify.index', compact('list'));
   }
 
@@ -120,4 +120,6 @@ class UserController extends Controller
          $list = Paid::where('status','approved')->get();
         return view('admin.user.verify.index', compact('list'));
   }
+
+
 }

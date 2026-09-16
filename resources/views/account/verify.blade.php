@@ -16,8 +16,9 @@
         <label for="text" class="form-label text-dark">Select Account</label>
           <select class="form-control" name="ac_type" aria-label="Default select example">
 		  <option selected>Select Account</option>
-		  <option value="1">Bkas</option>
-		  <option value="2">Nagad</option>
+		  <option value="Bkas">Bkas</option>
+		  <option value="Nagad">Nagad</option>
+          <option value="Rocket">Rocket</option>
 		 </select>
         </div>
         <div class="mb-2">
