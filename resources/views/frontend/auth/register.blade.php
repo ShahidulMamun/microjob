@@ -2,7 +2,7 @@
 @section('content')
 <div class="container mt-5">
     <div class="row g-4 justify-content-center mt-5">
-    <div class="signup-card">
+    <div class="signup-card mt-5">
   <div class="form-title">SIGN UP</div>
   @if ($errors->any())
     <div class="alert alert-danger">
@@ -21,7 +21,6 @@
         <label class="form-label">Full Name<span>*</span></label>
         <input type="text" name="name" class="form-control" placeholder="Name" required/>
       </div>
-
       <!-- Username -->
       <div class="col-12 col-sm-6">
         <label class="form-label">Username<span>*</span></label>
@@ -59,7 +58,7 @@
       <!-- Country -->
       <div class="col-12 col-sm-6">
         <label class="form-label">Country<span>*</span></label>
-        <select class="form-select" name="country_id">
+        <select class="form-select form-control" name="country_id">
           @php $country = App\Models\Country::orderBy('name','asc')->get() @endphp
             @foreach($country as $ct)
           <option value="{{$ct->id}}" selected>{{$ct->name}}</option>
@@ -72,14 +71,14 @@
         <div class="form-check d-flex align-items-start gap-2">
           <input class="form-check-input flex-shrink-0" name="terms" type="checkbox" id="terms" required/>
           <label class="form-check-label" for="terms">
-            I agree to OnetaskMarket <a href="#">Terms &amp; Condition</a> and <a href="#">Privacy Policy</a>
+            I agree to Jobfixs <a href="#">Terms &amp; Condition</a> and <a href="#">Privacy Policy</a>
           </label>
         </div>
       </div>
 
       <!-- Register Button -->
       <div class="col-12">
-        <button type="submit" class="btn-register">REGISTER NOW</button>
+        <button type="submit" class="btn btn-register-user text-white">Singup Now</button>
       </div>
 
     </div>
@@ -89,8 +88,5 @@
 </div>
 </div>
 </div>
-<footer class="mt-5 footer-section">
-    @include('frontend.layouts.partials.footer')
-</footer>
 
 @endsection

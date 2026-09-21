@@ -6,7 +6,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-   <title>Onetaskmarket</title>
+   <title>JobFixs Online Jobs Marketplace</title>
     <!-- Scripts -->
      <!-- font-awesome -->
      <link rel="stylesheet" type="text/css" href="{{ asset('assets/font-awesome/css/font-awesome.css')}}">
@@ -24,6 +24,7 @@
             @yield('content')
         </main>
     </div>
-    <script src="{{ asset('home/js/bootstrap.bundle.min.js') }}"></script>
+    <!--<script src="{{ asset('home/js/bootstrap.bundle.min.js') }}"></script>-->
+     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
 </body>
 </html>
