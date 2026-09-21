@@ -112,7 +112,7 @@ class DepositController extends Controller
            
            
 
-        $mainWallet = SiteWallet::first();
+        $mainWallet = SiteWallet::firstOrcreate();
         $mainWallet->increment('lifetime_deposit',$deposit->amount);
 
         DB::commit();
