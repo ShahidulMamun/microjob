@@ -1,8 +1,17 @@
 @extends('user.layouts.app')
-
 @section('content')
-
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+    <header class="topbar">
+        @include('user.layouts.partials.navbar') 
+    </header>
+  <aside class="sidebar" id="sidebar">
+      @include('user.layouts.partials.sidebar')
+  </aside>
+  
+        <div class="content">
+             <div class="row g-4">
+               @include('user.layouts.partials.braking_news')
+               </div>
+             </div>
 
 <div class="container mt-5">
 

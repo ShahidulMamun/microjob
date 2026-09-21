@@ -1,5 +1,17 @@
 @extends('user.layouts.app')
 @section('content')
+    <header class="topbar">
+        @include('user.layouts.partials.navbar') 
+    </header>
+  <aside class="sidebar" id="sidebar">
+      @include('user.layouts.partials.sidebar')
+  </aside>
+  
+        <div class="content">
+             <div class="row g-4">
+               @include('user.layouts.partials.braking_news')
+               </div>
+             </div>
 <div class="container mt-4 px-3">
     <div class="row">
         <div class="col-12 px-0">
@@ -99,7 +111,7 @@
                                     {{ $withdraw->updated_at->format('d M y') }}
                                 @endif
                             </div>
-<!-- 
+                           <!-- 
                             @if($withdraw->reason)
                             <div class="col-6 text-muted">Reason</div>
                             <div class="col-6 text-end">{{ $withdraw->reason }}</div>
