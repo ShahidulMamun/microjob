@@ -12,61 +12,14 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 class UserWithdrawController extends Controller
 {
-    public function index(){
+    public function index()
+    {
 
-    	
-
-    	$methods = PaymentMethod::where('status','active')->get();
-    	return view('user.withdraw.create',compact('methods');
+    $methods = PaymentMethod::where('status','active')->get();
+    return view('user.withdraw.create',compact('methods'));
+    
     }
 
-    // public function create(Request $request){
-    //    $setting = WebsiteSetting::first();
-
-    //    $minWithdraw = $setting->min_withdraw;
-      
-    //    $request->validate([
-    //   'method' => 'required',
-    //   'number' => 'required',
-    //   'withdraw_amount' => 'required|numeric|min:'.$minWithdraw,
-    //   ]);
-
-
-    //    $amount = $request->withdraw_amount;
-    //    $chargeParcentage = $setting->withdraw_charge;
-    //    $charge = ($amount*$chargeParcentage)/100;
-
-    //    $withdraw_with_charge = $amount+$charge;
-       
-    //    $user = Auth::user();
-
-    //   if ($withdraw_with_charge>$user->current_earning) {
-       
-    //    $message =  "You have need $".$withdraw_with_charge ." for withdraw with $". $charge ." charge";
-    //    return back()->with('error',$message);
-    //   }
-      
-    //    Withdraw::create([
-    //     'user_id'       => $user->id,
-    //     'account_type'  => $request->method,
-    //     'account_no'    => $request->number,
-    //     'amount'        => $amount,
-    //     'charge'        => $charge,
-    //     'status'        => 'pending',
-    //   ]);
-
-    //    $user->decrement('current_earning',$withdraw_with_charge)
-
-
-    //    $message = "Your ". $amount ." withdraw submitted and pending";
-    //        UserNotification::create([
-    //             'user_id' => $user->user_id,
-    //             'message' => $message,
-    //             'status'  => 'pending',
-    //      ]);
-      
-
-    // }
 
     public function create(Request $request)
  {
