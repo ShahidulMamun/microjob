@@ -1,13 +1,27 @@
 @extends('user.layouts.app')
 @section('content')
- <div class="container mt-5">
+    <header class="topbar">
+        @include('user.layouts.partials.navbar') 
+    </header>
+  <aside class="sidebar" id="sidebar">
+      @include('user.layouts.partials.sidebar')
+  </aside>
+  
+  
+  <div class="content">
+             <div class="row g-4">
+                    @include('user.layouts.partials.braking_news')
+                  <div class="container mt-5">
      <div class="row">
-<div class="filter-bar px-0">
-  <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
-    <h5 class="text-dark fw-bold mt-2">Deposit History</h5>
-  </div>
-</div>
-<span class="text-success px-0 mt-2">{{$count}} Result</span>
+           <div class="col-lg-12">
+             <div class="card rounded-1">
+                   <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-6"><span class="text-success px-0 mt-2">{{$count}} Result</span></div>
+                        <div class="col-lg-6 text-end"><a class="btn btn-primary btn-sm" href="{{ route('user.deposit')}}" role="button"><i class="bi bi-currency-dollar"></i> Deposit</a></div>
+                    </div>
+                   </div>
+               </div>
 <div class="col-12 mt-3 px-0">
     <table class="table table-striped table-responsive">
   <thead class="table-light">
@@ -62,9 +76,14 @@
     @endforeach
   </tbody>
 </table>
-         </div>
+    </div>
+    </div>
      </div>
  </div>
+ </div>
+ </div>
+  
+<!--footer-->
 <footer class="mt-5 footer-section">
     @include('user.layouts.partials.footer')
 </footer>

@@ -140,13 +140,120 @@
     .secret-example-note {
         font-size: 11px; color: #6b7280; margin-top: -8px; margin-bottom: 10px;
     }
+    
+                          .content-pane{
+    padding: 3rem 3rem 3rem 3rem;
+  }
+
+  @media (max-width: 991.98px){
+    .content-pane{
+      padding: 2rem 2rem 2.5rem;
+    }
+  }
+
+  .eyebrow{
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    color: #2f6e4e;
+    margin-bottom: 1rem;
+  }
+  .eyebrow .dash{
+    width: 22px;
+    height: 2px;
+    background: #2f6e4e;
+    display: inline-block;
+  }
+
+  .headline{
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    font-size: 2.6rem;
+    color: #1f2a24;
+    margin-bottom: 1.25rem;
+  }
+  .headline .accent{
+    color: #F3667A;
+  }
+
+  .lede{
+    font-size: 1.02rem;
+    line-height: 1.65;
+    /*max-width: 42ch;*/
+    margin-bottom: 1.75rem;
+  }
+
+  .sub-question{
+    font-weight: 600;
+    color: #1f2a24;
+    margin-bottom: 1rem;
+  }
+
+  .benefit-card{
+    background: #F8FAFC;
+    border-radius: 1rem;
+    padding: 1.4rem 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .benefit-icon{
+    flex: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 0.65rem;
+    background: #8b5cf6;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+  }
+
+  .benefit-title{
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 0.3rem;
+    font-size: 0.98rem;
+  }
+
+  .benefit-text{
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: #000;
+    margin: 0;
+  }
+
+  .benefit-text .pct{
+    font-weight: 700;
+    color: #F3667A;
+  }
 </style>
 @endpush
 
 @section('content')
 
-{{-- Hidden form for submission --}}
-<form id="jobForm"
+    <header class="topbar">
+        @include('user.layouts.partials.navbar') 
+    </header>
+    <aside class="sidebar" id="sidebar">
+      @include('user.layouts.partials.sidebar')
+    </aside>
+          <div class="content">
+             <div class="row g-4">
+               @include('user.layouts.partials.braking_news')
+               
+               <div class="col-lg-12">
+                   <div class="card rounded-2">
+                       <div class="card-body">
+        <div class="row">
+            <div class="col-lg-6 mt-4">
+        {{-- Hidden form for submission --}}
+      <form id="jobForm"
       action="{{ route('user.create.job.store') }}"
       method="POST"
       enctype="multipart/form-data"
@@ -173,6 +280,52 @@
     <div class="step-bar" id="stepBar"></div>
     <div id="wizardContent"></div>
 </div>
+            </div>
+     <div class="col-lg-6">
+        <div class="content-pane">
+        <div class="sub-question">Before You Post a Job</div>
+        <div class="d-flex flex-column gap-3 mb-4">
+          <div class="benefit-card">
+            <div class="benefit-icon"><i class="bi bi-geo-alt"></i></div>
+            <div>
+              <div class="benefit-title">Select location</div>
+              <p class="benefit-text">
+                Choose a continent then pick a country
+              </p>
+            </div>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon"><i class="bi bi-list-task"></i></div>
+            <div>
+              <div class="benefit-title">Category</div>
+              <p class="benefit-text">
+                Selected Category then SubCategory
+              </p>
+            </div>
+          </div>
+            <div class="benefit-card">
+            <div class="benefit-icon"><i class="bi bi-archive-fill"></i></div>
+            <div>
+              <div class="benefit-title">Job Details</div>
+              <p class="benefit-text">
+                 job Title (max 40 characters),Job description,Number of workers needed,Thumbnail image,if any secret code to apply,finally Proof requirements text or image.
+              </p>
+            </div>
+          </div>
+        </div>
+        </div>
+            </div>
+        </div>
+  
+                       </div>
+                   </div>
+               </div>
+               </div>
+               </div>
+<footer class="mt-5 footer-section">
+    @include('user.layouts.partials.footer')
+</footer>
 @endsection
 
 @push('scripts')

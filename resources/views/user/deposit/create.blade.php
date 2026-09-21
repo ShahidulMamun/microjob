@@ -1,13 +1,28 @@
 @extends('user.layouts.app')
 @section('content')
- <div class="container mt-5">
+
+    <header class="topbar">
+        @include('user.layouts.partials.navbar') 
+    </header>
+  <aside class="sidebar" id="sidebar">
+      @include('user.layouts.partials.sidebar')
+  </aside>
+      <div class="content">
+             <div class="row g-4">
+               @include('user.layouts.partials.braking_news')
+        <div class="container mt-5">
      <div class="row">
-<div class="filter-bar px-0">
-  <span class="text-dark fw-bold">Deposit </span>| <span><a class="fw-bold text-decoration-none text-dark" href="{{ route('user.deposit.history')}}" role="button">Transaction History</a></span>
-  <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
-  </div>
-</div>
-<div class="col-12 mt-3 px-0 card border-0 shadow">
+         <div class="col-lg-12">
+             <div class="card rounded-1">
+                   <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-6"><h6 class="text-dark fw-bold mt-2">Deposit</h6></div>
+                        <div class="col-lg-6 text-end"><a class="btn btn-primary btn-sm" href="{{ route('user.deposit.history')}}" role="button"><i class="bi bi-list-ul"></i> Transaction History</a></div>
+                    </div>
+                   </div>
+               </div>
+        <!--Manual Deposit-->
+<div class="col-12 mt-3 card rounded-2">
   <div class="card-body">
     <h5 class="text-dark">Manual Deposit</h5>
     <!-- Deposit -->
@@ -30,10 +45,10 @@
       @endforeach
          
   </div>
-  
     </div>
   </div>
       </div>
+         </div>
      </div>
      <!-- deposit modal open -->
      <div class="modal fade" id="editModal" tabindex="-1">
@@ -105,6 +120,12 @@
     </script>
     @endif
  </div>
+               
+               </div>
+               </div>
+
+
+
 <footer class="mt-5 footer-section">
     @include('user.layouts.partials.footer')
 </footer>
@@ -137,4 +158,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 </script>
-

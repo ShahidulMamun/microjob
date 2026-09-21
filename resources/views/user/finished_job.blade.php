@@ -1,6 +1,5 @@
 @extends('user.layouts.app')
 @section('content')
-
 <style>
   :root {
     --primary:    #006A4E;
@@ -15,10 +14,6 @@
     --radius:     10px;
   }
 
-  *, *::before, *::after { box-sizing: border-box; }
-  html, body { overflow-x: hidden; max-width: 100%; }
-
-  body { font-size: 12px; background: var(--bg-light); }
 
   /* ── Page Header ── */
   .page-header {
@@ -227,8 +222,20 @@
   }
 </style>
 
-<div class="container mt-4 mb-5">
 
+    <header class="topbar">
+        @include('user.layouts.partials.navbar') 
+    </header>
+  <aside class="sidebar" id="sidebar">
+      @include('user.layouts.partials.sidebar')
+  </aside>
+
+
+   <div class="content">
+             <div class="row g-4">
+               @include('user.layouts.partials.braking_news')
+               
+               <div class="container mt-4 mb-5">
   {{-- ── Page Header ── --}}
   <div class="page-header">
     <h6>My Submitted Tasks</h6>
@@ -412,6 +419,10 @@
   </div>
 
 </div>
+               
+            </div>
+        </div>
+
 
 <footer class="mt-5 footer-section">
   @include('user.layouts.partials.footer')

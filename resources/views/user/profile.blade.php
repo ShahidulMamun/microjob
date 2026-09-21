@@ -237,14 +237,26 @@
   }
   /*end image button*/
   </style>
- <br><br><br>
+  
+  
+    <header class="topbar">
+        @include('user.layouts.partials.navbar') 
+    </header>
+  <aside class="sidebar" id="sidebar">
+      @include('user.layouts.partials.sidebar')
+  </aside>
+      <div class="content">
+             <div class="row g-4">
+               @include('user.layouts.partials.braking_news')
+               </div>
+               </div>
 <div class="container mt-5">
     <!-- Row 1 -->
     <div class="row">
-		 @if(session('message'))
-		    <div class="alert alert-success text-center font-weight-bold">
-		        {{ session('message') }}
-		    </div>
+     @if(session('message'))
+        <div class="alert alert-success text-center font-weight-bold">
+            {{ session('message') }}
+        </div>
          @endif
         <!-- Personal Info Card -->
         <div class="col-12 col-xsm-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 mt-3">

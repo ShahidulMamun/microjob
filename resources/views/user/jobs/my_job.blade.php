@@ -2,7 +2,6 @@
 @section('content')
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
 
     :root {
         --teal: #1abc9c;
@@ -18,11 +17,6 @@
         --boost-light: #ede9fe;
     }
 
-    *, *::before, *::after { box-sizing: border-box; }
-    html, body { overflow-x: hidden; max-width: 100%; }
-    img { max-width: 100%; height: auto; }
-
-    body { font-family: 'DM Sans', sans-serif; font-size: 12px; }
 
     /* ── Table Card ── */
     .jobs-card {
@@ -445,8 +439,20 @@
     }
 </style>
 
-<div class="container mt-4 pb-5">
 
+    <header class="topbar">
+        @include('user.layouts.partials.navbar') 
+    </header>
+  <aside class="sidebar" id="sidebar">
+      @include('user.layouts.partials.sidebar')
+  </aside>
+  
+      <!--middd-->
+    <div class="content">
+             <div class="row g-4">
+                 @include('user.layouts.partials.braking_news')
+                <!--job table-->
+               <div class="col-lg-12">
     {{-- ── Card Header ── --}}
     <div class="jobs-card">
         <div class="card-top">
@@ -712,10 +718,11 @@
             </div>
             @endforelse
         </div>
-
     </div>
+ </div>
+ </div>
 </div>
-
+    <!--end midde-->
 {{-- ══ EDIT MODAL ══ --}}
 <div class="modal fade" id="editWorkerModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">

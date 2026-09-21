@@ -1,19 +1,8 @@
-@extends('user.layouts.app')
-@section('content')
-    <header class="topbar">
-        @include('user.layouts.partials.navbar') 
-    </header>
-  <aside class="sidebar" id="sidebar">
-      @include('user.layouts.partials.sidebar')
-  </aside>
-  <!--middd-->
-    <div class="content">
-             <div class="row g-4">
           <div class="col-12 col-xl-6">
-            <div class="card p-4 h-100">
+            <div class="card p-4 h-100 rounded-2">
               <div class="c-head align-items-start">
                 <div>
-                  <h5 class="mb-1 fw-semibold">Our Community Members</h5>
+                  <h5 class="mb-1 fw-semibold">Our Community Members Earning</h5>
                   <div class="text-muted small">Total <b class="text-dark">16</b> Active Members</div>
                 </div>
                 <i class="bi bi-three-dots-vertical text-muted"></i>
@@ -47,7 +36,7 @@
             </div>
           </div>
           <div class="col-12 col-xl-6">
-            <div class="card p-4 h-100">
+            <div class="card p-4 h-100 rounded-2">
               <div class="c-head align-items-start">
                 <div>
                   <h5 class="mb-1 fw-semibold">Breaking News</h5>
@@ -69,9 +58,3 @@
                       </div>
                   </div>
                </div>
-           </div>
-       </div>
-    <!--end midde-->
-     <div class="backdrop" id="backdrop"></div>
-   @include('user.layouts.partials.footer') 
-@endsection

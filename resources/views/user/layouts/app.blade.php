@@ -6,12 +6,12 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-   <title>Onetaskmarket</title>
+   <title>JobFixs Freelancer MarketPlace</title>
      <!-- font-awesome -->
      <link rel="stylesheet" type="text/css" href="{{ asset('assets/font-awesome/css/font-awesome.css')}}">
      <link rel="stylesheet" type="text/css" href="{{ asset('assets/font-awesome/css/font-awesome.min.css')}}">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
      <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
-
      <!-- for widthdrow -->
      <!-- Then plugins -->
       <script src="{{ asset('assets/js/toastr.min.js') }}"></script>
@@ -25,16 +25,16 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/main.css')}}">
     <!-- widthdrow css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/withdraw.css')}}">
+    <!--dashboard-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/dashboard.css')}}">
   @php 
   $setting = App\Models\WebsiteSetting::first();
   @endphp
     <link rel="icon" type="image/png" href="{{asset('storage/'.$setting->site_logo) }}">
     @stack('styles')
 </head>
-
 <body>
- @include('user.layouts.partials.navbar')
-     <div id="app">
+    <div class="main" id="main">
         <main class="py-0">
             @yield('content')
         </main>
