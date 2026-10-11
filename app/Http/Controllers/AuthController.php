@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Deposit;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 class AuthController extends Controller
 {
@@ -89,6 +91,31 @@ public function login(Request $request)
             'role' => 'user', // force user role
             'referred_by' => $referrer?->id,
         ]);
+
+
+// Fixed $1 এর 3% commission = $0.03
+$commission = 1 * 0.03;
+
+if ($user->referred_by) {
+
+    $referrer = User::find($user->referred_by);
+
+    if ($referrer) {
+        $referrer->increment(
+            'deposit_commission_from_refer',
+            $commission
+        );
+
+        $referrer->increment(
+            'current_deposit',
+            $commission
+        );
+
+       // Increase total referral count by 1
+        $referrer->increment('total_refer', 1);
+    }
+}
+
           auth()->login($user);
          return redirect()->route('user.dashboard');
     }
@@ -103,5 +130,3 @@ public function login(Request $request)
         return redirect('/login');
     }
 }
-
-

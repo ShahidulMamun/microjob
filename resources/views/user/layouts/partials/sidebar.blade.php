@@ -38,33 +38,34 @@
           </a>
         </li>
         <li>
-          <a class="s-link" href="{{ route('user.browse.deal') }}">
-           <i class="bi bi-arrow-90deg-right"></i>
-            <span>Browse Deal</span>
-             <i class="bi bi-chevron-right ms-auto arw"></i>
-          </a>
-        </li>
-        <li>
           <a class="s-link" href="{{ route('user.deal.create') }}">
            <i class="bi bi-box-arrow-in-right"></i>
-            <span>Post Deal</span>
+            <span>Create Ads</span>
             <i class="bi bi-chevron-right ms-auto arw"></i>
           </a>
         </li>
+
         <li>
+          <a class="s-link" href="{{ route('user.browse.deal') }}">
+           <i class="bi bi-arrow-90deg-right"></i>
+            <span>My Ads</span>
+             <i class="bi bi-chevron-right ms-auto arw"></i>
+          </a>
+        </li>
+      <!--   <li>
           <a class="s-link" href="{{ route('user.my.deal.post') }}">
             <i class="bi bi-calendar2-plus-fill"></i>
             <span>My Deal Post</span>
             <i class="bi bi-chevron-right ms-auto arw"></i>
           </a>
-        </li>
-        <li>
+        </li> -->
+       <!--  <li>
           <a class="s-link" href="{{ route('user.deal.order') }}">
            <i class="bi bi-list-ul"></i>
             <span>My Order</span>
             <i class="bi bi-chevron-right ms-auto arw"></i>
           </a>
-        </li>
+        </li> -->
         <li>
           <a class="s-link" href="{{ route('user.refer.earn') }}">
             <i class="bi bi-bag-plus"></i>
