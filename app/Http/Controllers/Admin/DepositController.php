@@ -69,7 +69,7 @@ class DepositController extends Controller
     public function approveDeposit($id)
     {
   
-    $deposit = Deposit::findOrFail($id);
+     $deposit = Deposit::findOrFail($id);
 
     // already processed check
     if ($deposit->status !== 'pending') {
@@ -86,7 +86,31 @@ class DepositController extends Controller
         $deposit->save();
 
         //  user balance increment
-        $user = User::findOrFail($deposit->user_id);
+
+        $user = User::findOrFail($deposit->user_id); // deposit user
+        if ($user->referred_by) {
+             $referred_by = User::where('referral_code',$user->referred_by)->first();  //others user
+             $setting = WebsiteSetting::first();
+             $reffer_bonus_parcent = $setting->reffer_bonus;
+             $bonus = ($deposit->amount*$reffer_bonus_parcent)/100;
+        
+             $referred_by->deposit_commission_from_refer += $bonus;
+             $referred_by->save();
+
+             UserTransaction::create([
+            'user_id' => $referred_by->user_id,
+            'transaction_id' => strtoupper(uniqid()),
+            'type' => "earning",
+            'amount' => $bonus,
+            'description' => "Refer earnign from ". $user->name . "added successfully",
+            'reference_id' => "Deposit ID ".$deposit->id,
+            'status' => 'success',
+           ]);
+
+
+        }
+      
+
         $user->current_deposit += $deposit->amount;
         $user->total_deposit += $deposit->amount;
         $user->save();
