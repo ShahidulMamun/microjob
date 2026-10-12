@@ -1,6 +1,5 @@
 @extends('user.layouts.app')
 @section('content')
-
     <header class="topbar">
         @include('user.layouts.partials.navbar') 
     </header>
