@@ -107,7 +107,7 @@ tr:last-child td{border-bottom:none}
     <button class="hbtn" id="hbtn" onclick="toggleSB()">
       <span></span><span></span><span></span>
     </button>
-    <div class="logo">Onetask<em>Market</em> <span style="font-size:10px;background:#eff6ff;color:#2563eb;padding:2px 6px;border-radius:4px;font-weight:600;margin-left:2px">Admin</span></div>
+    <div class="logo">jobfixs</em> <span style="font-size:10px;background:#eff6ff;color:#2563eb;padding:2px 6px;border-radius:4px;font-weight:600;margin-left:2px">Admin</span></div>
     <div class="tb-search">
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6.5" cy="6.5" r="4.5"/><path d="m10 10 3.5 3.5"/></svg>
       <input placeholder="Search jobs, users...">
@@ -126,10 +126,10 @@ tr:last-child td{border-bottom:none}
     <main class="main">
       <div class="row">
 
-              <div class="col-md-4">
+              <div class="col-12 col-lg-4">
             <div class="card shadow-sm border-0 rounded-3 mt-3">
-              <div class="card-header bg-success text-white">
-                  <h5 class="mb-2">Add Method</h5>
+              <div class="card-header bg-primary text-white">
+                  <h6 class="mb-2">Add Method</h6>
               </div>
               @if(session()->has('success'))
             <div class="alert alert-success">
@@ -146,7 +146,7 @@ tr:last-child td{border-bottom:none}
                   <form action="{{ route('admin.payment-method.store') }}" method="POST" enctype="multipart/form-data">
                       @csrf
 
-                      <div class="mb-3">
+                      <div class="mb-0">
                           <label class="form-label">Name</label>
                           <input type="text" name="name" class="form-control" placeholder="Name (bKash)" required>
                           @error('name')
@@ -154,14 +154,14 @@ tr:last-child td{border-bottom:none}
                           @enderror
                       </div>
 
-                      <div class="mb-3">
+                      <div class="mb-0">
                           <label class="form-label">Account Number</label>
                           <input type="text" name="number" class="form-control" placeholder="01928XXXXXX" required>
                            @error('number')
                            <div class="alert alert-danger">{{$message}}</div>
                            @enderror
                       </div>
-                      <div class="mb-3">
+                      <div class="mb-0">
                           <label class="form-label">Type</label>
                           <select name="type" class="form-control" required>
                               <option value="">Select Type</option>
@@ -175,7 +175,7 @@ tr:last-child td{border-bottom:none}
                            @enderror
                       </div>
 
-                        <div class="mb-3">
+                        <div class="mb-2">
                           <label class="form-label">Logo</label>
                           <input type="file" name="logo" class="form-control">
                            @error('logo')
@@ -183,17 +183,18 @@ tr:last-child td{border-bottom:none}
                            @enderror
                        </div>
 
-                      <button type="submit" class="btn btn-success w-100">
+                      <button type="submit" class="btn btn-primary">
                           Save
                       </button>
                   </form>
               </div>
           </div>
          </div>
-         <div class="col-md-8">
+         <div class="col-12 col-lg-8">
                <div class="card shadow-sm border-0 rounded-3 mt-3">
                    <div class="card-body">
-                   <table class="table table-striped  table-responsive">
+                    <div class="table-responsive-sm">
+                 <table class="table table-striped">
                     <thead>
                       <tr>
                         <th>#</th>
@@ -232,7 +233,7 @@ tr:last-child td{border-bottom:none}
                         </a>
 
                         <!-- edit button -->
-                         <button class="editBtn btn btn-sm btn-success"
+                         <button class="editBtn btn btn-sm btn-primary"
 
                               data-id="{{ $method->id }}"
                               data-name="{{ $method->name }}"
@@ -250,6 +251,7 @@ tr:last-child td{border-bottom:none}
                      
                     </tbody>
                   </table>
+                </div>
                   </div>
             </div>
          </div>

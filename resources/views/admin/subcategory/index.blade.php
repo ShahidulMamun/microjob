@@ -107,7 +107,7 @@ tr:last-child td{border-bottom:none}
     <button class="hbtn" id="hbtn" onclick="toggleSB()">
       <span></span><span></span><span></span>
     </button>
-    <div class="logo">Onetask<em>Market</em> <span style="font-size:10px;background:#eff6ff;color:#2563eb;padding:2px 6px;border-radius:4px;font-weight:600;margin-left:2px">Admin</span></div>
+    <div class="logo">Jobfixs</em> <span style="font-size:10px;background:#eff6ff;color:#2563eb;padding:2px 6px;border-radius:4px;font-weight:600;margin-left:2px">Admin</span></div>
     <div class="tb-search">
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6.5" cy="6.5" r="4.5"/><path d="m10 10 3.5 3.5"/></svg>
       <input placeholder="Search jobs, users...">
@@ -124,15 +124,10 @@ tr:last-child td{border-bottom:none}
      @include('admin.layouts.sidebar');
     <main class="main">
        <div class="card shadow-sm border-0 rounded-3">
-   
-    <div class="card shadow-sm border-0 rounded-3 mt-4">
-    <div class="card-header bg-success text-white">
-        <h5 class="mb-0">Add Sub Category</h5>
-    </div>
 
-    <div class="card-body">
-
-      @if(session()->has('success'))
+        <div class="row">
+          <div class="col-12 col-lg-4">
+             @if(session()->has('success'))
             <div class="alert alert-success">
                 {{ session('success') }}
             </div>
@@ -142,15 +137,18 @@ tr:last-child td{border-bottom:none}
                     {{ session('error') }}
                 </div>
             @endif
-        <form action="{{ route('admin.subcategory.store') }}" method="POST">
+            <div class="card shadow border-0 rounded-2 mt-4">
+               <div class="card-header bg-primary text-white">
+                <h6 class="mb-0">Add Sub Category</h6>
+                  </div>
+          <form action="{{ route('admin.subcategory.store') }}" method="POST">
             @csrf
-
-            <div class="mb-3">
+            <div class="mb-0 mt-3">
                 <label class="form-label">Sub Category Name</label>
                 <input type="text" name="subcategory" class="form-control" placeholder="Youtube Subscribe" required>
             </div>
 
-            <div class="mb-3">
+            <div class="mb-0">
                 <label class="form-label">Category Name</label>
                  <select class="form-control" name="category_id">
                    <option>Select Category</option>
@@ -159,61 +157,61 @@ tr:last-child td{border-bottom:none}
                    @endforeach
                  </select>
             </div>
-
-            <div class="mb-3">
+            <div class="mb-2">
                 <label class="form-label">Price in($)</label>
                 <input type="text" name="minimum_cost" class="form-control" placeholder="0.02" required>
             </div>
-
-          
-
-
-            <button type="submit" class="btn btn-success w-100">
-                 Save SubCategory
+            <button type="submit" class="btn btn-primary">
+                 Add
             </button>
         </form>
-    </div>
-</div>
-
-       <div class="card-body">
-		   <table class="table">
-			  <thead>
-			    <tr>
-			      <th scope="col">#</th>
-			      <th scope="col">Name</th>
+            </div>
+          </div>
+           <div class="col-12 col-lg-8">
+              <div class="card shadow border-0 rounded-2 mt-4">
+                <div class="card-header bg-primary text-white">
+                <h6 class="mb-0">Sub Category list</h6>
+                  </div>
+        <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
             <th scope="col">Price</th>
-			      <th scope="col">Status</th>
-			      <th scope="col">Action</th>
-			    </tr>
-			  </thead>
-			  <tbody>
-			  	@php $i=1 @endphp
-			  @foreach($subcategories as $subcat)
-			    <tr>
-			      <th scope="row">{{$i++}}</th>
-			      <td>{{$subcat->name}}</td>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          @php $i=1 @endphp
+        @foreach($subcategories as $subcat)
+          <tr>
+            <th scope="row">{{$i++}}</th>
+            <td>{{$subcat->name}}</td>
             <td class="text-success">${{$subcat->minimum_cost}}</td>
-			      <td>
-			      	@if($subcat->is_active==true)
-			      	  Active
-			      	@else
+            <td>
+              @if($subcat->is_active==true)
+                Active
+              @else
                 Inactive
-			      	@endif
+              @endif
 
-			      </td>
-			      <td>
+            </td>
+            <td>
            
             <a href="{{ route('admin.subcategory.delete', $subcat->id) }}"
                            onclick="return confirm('Are you sure to delete category?')">
               <button class="btn btn-sm btn-danger">Delete</button>
           </a>   
             </td>
-			    </tr>
-			  @endforeach
-			   
-			  </tbody>
-			</table>
-      </div>
+          </tr>
+        @endforeach
+         
+        </tbody>
+      </table>
+              </div>
+           </div>
+        </div> 
 </div>
     </main>
   </div>

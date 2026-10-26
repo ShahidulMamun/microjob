@@ -137,14 +137,14 @@ tr:last-child td{border-bottom:none}
                 {{ session('error') }}
             </div>
         @endif
-          <h6 class="card border-0 rounded-2 mb-1  text-dark fw-bold">Add Category</h6>
+          <h6 class="card border-0 rounded-2 mb-1  text-white fw-bold bg-primary">Add Category</h6>
             <div class="card border-0 mt-0 rounded-2">
                 <div class="card-body">
     <form action="{{ route('admin.category.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-1">
-                <label class="form-label">Category Name</label>
-                <input type="text" name="category" class="form-control" placeholder="Youtube" required>
+            <label class="form-label">Category Name</label>
+            <input type="text" name="category" class="form-control" placeholder="Youtube" required>
             </div>
 
             <div class="mb-1">
@@ -160,10 +160,10 @@ tr:last-child td{border-bottom:none}
             </div>
         </div>
         <div class="col-12 col-lg-8">
-           <h6 class="card border-0 rounded-2 mb-1  text-dark fw-bold"> Category List</h6>
+           <h6 class="card border-0 rounded-2 mb-1  text-white fw-bold bg-primary"> Category List</h6>
             <div class="card border-0 rounded-2 mt-0">
                 <div class="card-body">
-            <table class="table">
+           <table class="table table-striped">
         <thead>
           <tr>
             <th scope="col">#</th>

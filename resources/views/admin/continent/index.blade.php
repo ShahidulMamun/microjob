@@ -107,7 +107,7 @@ tr:last-child td{border-bottom:none}
     <button class="hbtn" id="hbtn" onclick="toggleSB()">
       <span></span><span></span><span></span>
     </button>
-    <div class="logo">Onetask<em>Market</em> <span style="font-size:10px;background:#eff6ff;color:#2563eb;padding:2px 6px;border-radius:4px;font-weight:600;margin-left:2px">Admin</span></div>
+    <div class="logo">Jobfixs</em> <span style="font-size:10px;background:#eff6ff;color:#2563eb;padding:2px 6px;border-radius:4px;font-weight:600;margin-left:2px">Admin</span></div>
     <div class="tb-search">
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6.5" cy="6.5" r="4.5"/><path d="m10 10 3.5 3.5"/></svg>
       <input placeholder="Search jobs, users...">
@@ -120,15 +120,12 @@ tr:last-child td{border-bottom:none}
 
   <div class="body">
     <div class="overlay" id="overlay" onclick="closeSB()"></div>
-
    @include('admin.layouts.sidebar')
-
     <main class="main">
       <div class="row">
-
               <div class="col-md-4">
             <div class="card shadow-sm border-0 rounded-3 mt-3">
-              <div class="card-header bg-success text-white mb-2">
+              <div class="card-header bg-primary text-white mb-2">
                   <h5 class="mb-0">Add Continent</h5>
               </div>
 				@if(session()->has('success'))
@@ -160,7 +157,7 @@ tr:last-child td{border-bottom:none}
 				                <input type="text" name="emoji" class="form-control" placeholder="🌍">
 				            </div>
 
-				            <button type="submit" class="btn btn-success w-100">
+				            <button type="submit" class="btn btn-primary w-100">
 				                 Save Continent
 				            </button>
 				        </form>
@@ -170,14 +167,14 @@ tr:last-child td{border-bottom:none}
          <div class="col-md-8">
                <div class="card shadow-sm border-0 rounded-3 mt-3">
                    <div class="card-body">
-                   <table class="table table-striped  table-responsive">
-                    <thead>
+                   <table class="table table-striped">
+                    <thead class="bg-primary text-white">
                       <tr>
-		                  <th scope="col">#</th>
-					      <th scope="col">Name</th>
-					      <th scope="col">Code</th>
-					      <th scope="col">Status</th>
-					      <th scope="col">Action</th>
+		            <th class="text-white">#</th>
+					      <th class="text-white">Name</th>
+					      <th class="text-white">Code</th>
+					      <th class="text-white">Status</th>
+					      <th class="text-white">Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -195,7 +192,6 @@ tr:last-child td{border-bottom:none}
 
 			      </td>
 			      <td>
-			      	
 			      	 <!-- delete button -->
                         <a href="{{ route('admin.continent.delete', $continent->id) }}"
                            onclick="return confirm('Are you sure to delete continent?')">
@@ -203,7 +199,7 @@ tr:last-child td{border-bottom:none}
                         </a>
 
                         <!-- edit button -->
-                         <button class="editBtn btn btn-sm btn-success"
+                         <button class="editBtn btn btn-sm btn-primary"
 
                               data-id="{{ $continent->id }}"
                               data-name="{{ $continent->name }}"
@@ -234,7 +230,7 @@ tr:last-child td{border-bottom:none}
 
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5>Edit Payment Method</h5>
+                            <h5>Edit Continent</h5>
                             <button type="button" class="close" data-dismiss="modal">
                                 <span>&times;</span>
                             </button>
@@ -265,7 +261,7 @@ tr:last-child td{border-bottom:none}
                         </div>
 
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-success">Update</button>
+                            <button type="submit" class="btn btn-primary">Update</button>
                         </div>
                     </div>
                 </form>
