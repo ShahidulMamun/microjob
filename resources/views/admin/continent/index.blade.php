@@ -180,7 +180,7 @@ tr:last-child td{border-bottom:none}
                     <tbody>
                 @foreach($continents as $continent)
 			    <tr>
-			      <th scope="row">1</th>
+			     <td>{{ $loop->iteration }}</td>
 			      <td>{!!$continent->name!!}</td>
 			      <td>{!!$continent->code!!}</td>
 			      <td>

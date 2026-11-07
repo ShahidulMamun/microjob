@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\BreakingNoticeController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\WithdrawController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\FacebookPixelController;
 //admin route group
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
 
@@ -23,10 +24,6 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
         Route::get('/user/verify/approve-list/', [UserController::class, 'upgradeApprovedList'])->name('paid.approve.list');
         Route::get('/user/verify/approve/{id}', [UserController::class, 'approve'])->name('paid.approve');
         
-
-
-
-
         //continents route
         Route::get('/continent-add', [ContinentController::class, 'index'])->name('continent');
         Route::post('/continent-store', [ContinentController::class, 'store'])->name('continent.store');
@@ -103,7 +100,10 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 
       Route::get('/user/details/{id}', [UserController::class,'userDetails'])
     ->name('user.details');
-      
+
+    // facebook pixel
+      Route::get('/facebook/pixel', [FacebookPixelController::class, 'pixeladd'])->name('facebook.pixel');
+      Route::post('/facebook/pixel/store', [FacebookPixelController::class, 'pixelstore'])->name('facebook.pixel.store');
       //jobs route
       Route::get('/all-jobs', [JobController::class, 'jobs'])->name('all-jobs');
 

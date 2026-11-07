@@ -198,7 +198,7 @@ tr:last-child td{border-bottom:none}
         <tbody>
         @foreach($countries as $country)
           <tr>
-            <th scope="row">1</th>
+            <td>{{ $loop->iteration }}</td>
             <td>{!!$country->name!!}</td>
             <td>{!!$country->code!!}</td>
             <td>
